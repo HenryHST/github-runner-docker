@@ -1,0 +1,6 @@
+.obsidian
+.obsidian/**
+.DS_Store
+
+**/.envrc
+**/.env

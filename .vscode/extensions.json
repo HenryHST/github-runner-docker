@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "adrianwilczynski.alpine-js-intellisense",
+    "esbenp.prettier-vscode",
+    "frontmatter.frontmatter-vscode",
+    "unifiedjs.vscode-mdx"
+  ],
+  "unwantedRecommendations": []
+}
