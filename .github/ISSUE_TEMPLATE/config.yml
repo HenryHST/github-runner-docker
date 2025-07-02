@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: BUG OR FEATURE REQUEST FOR A DEVICE MODULE?
+    url: https://github.com/henryhst?type=source
+    about: Report it against the module itself, to get the relevant people notified.
+  - name: NEW DEVICE OR SOFTWARE SUPPORT
+    url: https://github.com/HenryHST/github-runner-docker/issues
+    about: Please request new device integrations here.

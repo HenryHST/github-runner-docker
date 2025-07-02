@@ -1,9 +1,13 @@
 name: build
+permissions:
+  contents: read
+  security-events: write
 on:
   push:
     branches:
       - main
   pull_request:
+
 jobs:
   build:
     name: Build
