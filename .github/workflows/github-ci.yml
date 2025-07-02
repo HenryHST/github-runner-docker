@@ -1,9 +1,5 @@
+---
 name: Build Github Runner CI
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
 on:
   push:
     branches: [ "main" ]
@@ -11,19 +7,17 @@ on:
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ "main" ]
-
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-
 permissions:
   contents: read
-    
 jobs:
   docker:
-    # This workflow is only of value for henryhst/github-runner-docker repo and would always be skipped in forks
+    # This workflow is only of value for henryhst/github-runner-docker repo 
+    # and would always be skipped in forks
     if: github.repository == 'henryhst/github-runner-docker'
     runs-on: ubuntu-latest
     permissions:
@@ -43,7 +37,7 @@ jobs:
         with:
           cosign-release: 'v2.2.4'
       
-          # Login against a Docker registry except on PR
+      # Login against a Docker registry except on PR
       # https://github.com/docker/login-action  
       - name: Log into registry ${{ env.REGISTRY }}
         if: github.event_name != 'pull_request'

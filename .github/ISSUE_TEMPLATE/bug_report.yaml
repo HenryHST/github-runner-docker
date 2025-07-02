@@ -8,7 +8,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        **This form is only for bugs related to the Companion software itself. If you are reporting a bug that you feel is limited to a specific repository, please make the bug report directly in that module's repository.**
+        **This form is only for bugs related to the Companion software itself. 
+        If you are reporting a bug that you feel is limited to a specific repository, please make the bug report directly in that module's repository.**
         The Repositories can be located within the Henryhst Github account ( https://github.com/henryhst?type=source) with the following naming convention: companion-module-*manufacturer*-*product*
   - type: checkboxes
     attributes:

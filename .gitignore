@@ -4,3 +4,10 @@
 
 **/.envrc
 **/.env
+
+# Logs
+logs
+*.log
+
+#ignore copilot files
+.github/copilot-instructions.md
