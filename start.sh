@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 REPOSITORY=$REPO
 ACCESS_TOKEN=$TOKEN

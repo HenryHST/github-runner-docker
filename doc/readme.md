@@ -61,8 +61,8 @@ The image ENTRYPOINT is the first command being executed when the Docker image i
 
 ## The image start script
 
-Important notice: this script relies on the parameters REPO and TOKEN being passed to it. We will see how to do that at a later stage.
-We have created an image that contains everything that we need to execute a runner: the various dependencies, the runner source files, a docker user, but in order to activate the runner and have it connect to our GitHub repo we need to perform some more advanced operations, which would be annoying if not impossible to define from the Dockerfile.
+Important notice: this script relies on the parameters repository and TOKEN being passed to it. We will see how to do that at a later stage.
+We have created an image that contains everything that we need to execute a runner: the various dependencies, the runner source files, a docker user, but in order to activate the runner and have it connect to our GitHub repository we need to perform some more advanced operations, which would be annoying if not impossible to define from the Dockerfile.
 What we are setting out to do here is to make an API call to GitHub and get in response a Registration Token. A registration token is an identifier that allows us to register a runner. The tokens are created at the moment and then our repo’s GitHub Actions will only accept runners that attempt to register using a token that was created by it.
 Then we will use that token to execute the config.sh script contained in the runner files. This will contact the GitHub Actions server and automatically connect.
 
@@ -71,7 +71,7 @@ The response from the curl is assigned to the variable REG_TOKEN .
 cd /home/docker/actions-runner
 cd into the actions-runner directory in the docker user’s home dir
 ./config.sh --url https://github.com/${REPO} --token ${REG_TOKEN}
-Running the config.sh script with url and token parameters
+Running the config.sh script with URL and token parameters
 cleanup() {
 echo "Removing runner..."
     ./config.sh remove --unattended --token ${REG_TOKEN}
@@ -99,7 +99,7 @@ Great! Next we’re gonna SSH into our server and write the compose.yml file!
 ## Preparing the docker-compose.yml file
 
 Once Docker is up and running on your server, all that’s left is to download and execute the GitHub Actions image you created earlier. You can run said image as many times as you want, and each time it will spawn an independent runner.
-There are two ways to go about it. The first one is to run the image directly with docker run but I dislike this method because it requires you to manually enter your GitHub Token and your repo name every time.
+There are two ways to go about it. The first one is to run the image directly with docker run but I dislike this method because it requires you to manually enter your GitHub Token and your repository name every time.
 My preferred method is to create a compose.yml file and store these parameters in there as environment variables.
 Now, before launching 8000 runners on your server you should take into account memory usage. From the Docker docs:
 It is important not to allow a running container to consume too much of the host machine’s memory. On Linux hosts, if the kernel detects that there is not enough memory to perform important system functions, it throws an OOME, or Out Of Memory Exception, and starts killing processes to free up memory. Any process is subject to killing, including Docker and other important applications. This can effectively bring the entire system down if the wrong process is killed.

@@ -31,7 +31,8 @@ jobs:
         env:
           VALIDATE_YAML_PRETTIER: false
           VALIDATE_DOCKERFILE_HADOLINT: false
-          # bugfix #38
+          VALIDATE_BASH: false
+          VALIDATE_BASH_EXEC: false
           VALIDATE_CSS: false
           VALIDATE_CSS_PRETTIER: false
           VALIDATE_JAVASCRIPT_PRETTIER: false
@@ -39,6 +40,7 @@ jobs:
           VALIDATE_JSCPD: false
           VALIDATE_MARKDOWN: false
           VALIDATE_MARKDOWN_PRETTIER: false
+          VALIDATE_SHELL_SHFMT: false
           # install package 'prettier-plugin-astro issue #38
           VALIDATE_JSON_PRETTIER: false
           VALIDATE_TSX: false

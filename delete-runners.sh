@@ -1,4 +1,5 @@
 #!bin/bash
+set -euo pipefail
 
 REPO=$1
 TOKEN=$2

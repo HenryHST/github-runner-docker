@@ -1,4 +1,4 @@
-name: build
+name: Trivy vulnerability scanner
 permissions:
   contents: read
   security-events: write
