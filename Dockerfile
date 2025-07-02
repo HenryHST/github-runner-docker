@@ -25,11 +25,11 @@ RUN chmod +x start.sh
 # set the user to "docker" so all subsequent commands are run as the docker user
 USER docker
 
-LABEL org.opencontainers.image.description="github runner docker image for selfhost infra"
-LABEL org.opencontainers.image.authors="h.stadthagen@me.com"
-LABEL org.opencontainers.image.title="github-runner-docker"
-LABEL org.opencontainers.image.url=https://github.com/HenryHST/github-runner-docker
-LABEL org.opencontainers.image.licenses=MIT
+LABEL "org.opencontainers.image.description": "github runner docker image for selfhost infra"
+LABEL "org.opencontainers.image.authors": "h.stadthagen@me.com"
+LABEL "org.opencontainers.image.title": "github-runner-docker"
+LABEL "org.opencontainers.image.url": "https://github.com/HenryHST/github-runner-docker"
+LABEL "org.opencontainers.image.licenses": "MIT"
 
 
 ENTRYPOINT ["./start.sh"]
